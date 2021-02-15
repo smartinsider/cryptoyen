@@ -1,0 +1,8 @@
+/usr/bin/cryptoyen_modern-cli		--	gen_context(system_u:object_r:cryptoyen_modern_exec_t,s0)
+/usr/sbin/cryptoyen_modernd		--	gen_context(system_u:object_r:cryptoyen_modern_exec_t,s0)
+/usr/lib(64)?/cryptoyen_modern/cryptoyen_modernd		--	gen_context(system_u:object_r:cryptoyen_modern_exec_t,s0)
+
+/etc/cryptoyen_modern(/.*)?		gen_context(system_u:object_r:cryptoyen_modern_conf_t,s0)
+/var/lib/cryptoyen_modern(/.*)?		gen_context(system_u:object_r:cryptoyen_modern_var_lib_t,s0)
+
+(/var)?/run/cryptoyen_modernd(/.*)?   gen_context(system_u:object_r:cryptoyen_modern_var_run_t,s0)

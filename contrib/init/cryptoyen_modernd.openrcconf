@@ -1,0 +1,33 @@
+# /etc/conf.d/cryptoyen_modernd: config file for /etc/init.d/cryptoyen_modernd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/cryptoyen_modern/cryptoyen_modern.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/cryptoyen_modernd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/cryptoyen_modernd.pid"
+
+# Where to write cryptoyen_modernd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/cryptoyen_modernd"
+
+# User and group to own cryptoyen_modernd process
+#BITCOIND_USER="cryptoyen_modern"
+#BITCOIND_GROUP="cryptoyen_modern"
+
+# Path to cryptoyen_modernd executable
+#BITCOIND_BIN="/usr/bin/cryptoyen_modernd"
+
+# Nice value to run cryptoyen_modernd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60

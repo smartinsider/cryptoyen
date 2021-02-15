@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Cryptoyen
+Comment=Cryptoyen P2P Cryptocurrency
+Comment[fr]=Cryptoyen, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Cryptoyen, eşten eşe kriptografik sanal para birimi
+Exec=cryptoyen_modern-qt %u
+Terminal=false
+Type=Application
+Icon=cryptoyen_modern128
+MimeType=x-scheme-handler/cryptoyen_modern;
+Categories=Office;Finance;
