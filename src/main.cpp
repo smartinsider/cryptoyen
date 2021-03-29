@@ -1614,7 +1614,7 @@ int64_t GetBlockValue(int nHeight)
     if (nHeight < 1){ 
         nSubsidy = 1000000 * COIN; //PREMINE 1000000	
     } else {
-        nSubsidy = 2 * COIN;
+        nSubsidy = 0.2 * COIN;
     }
 
     // Check if we reached the coin max supply.
@@ -1637,16 +1637,16 @@ int64_t GetMasternodePayment(int nHeight, unsigned mnlevel, int64_t blockValue)
     switch(mnlevel)
     {
         case 1:
-            ret = blockValue * 15 / 100; //15% of the block reward
+            ret = blockValue * 7 / 100; //7% of the block reward
 			break;
         case 2:
             ret = blockValue * 20 / 100; //20% of the block reward
             break;
         case 3:
-            ret = blockValue * 20 / 100; //20% of the block reward
+            ret = blockValue * 60 / 100; //30% of the block reward
             break;
         case 4:
-            ret = blockValue * 20 / 100; //20% of the block reward
+            ret = blockValue * 95 / 100; //40% of the block reward
             break;
     }
     return ret;
