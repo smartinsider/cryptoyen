@@ -53,10 +53,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints = // TOFIXED
     boost::assign::map_list_of(0, uint256("0x00000aa81f0006e1130ddd841e4220ac73d8a7e716dfb6e9fddeaad1e022a709"))
-      (1, uint256("0x0000008ec54068bd84d6ca08be6683e78b5aecc25410ee7074f71cd98572df1e"))
-      (65, uint256("0x000005201574c90eb0c4f077a5dcfbb26a2eb3967f20501a53459fbc1157e156"))
-      (117, uint256("0x0000008ec54068bd84d6ca08be6683e78b5aecc25410ee7074f71cd98572df1e"))
-      (189, uint256("0x0000091ac40b197383d32942f0f201cc78408867e0340505036860587513d263"))  
+      // (1, uint256("0x0000008ec54068bd84d6ca08be6683e78b5aecc25410ee7074f71cd98572df1e"))
+      // (65, uint256("0x000005201574c90eb0c4f077a5dcfbb26a2eb3967f20501a53459fbc1157e156"))
+      // (117, uint256("0x0000008ec54068bd84d6ca08be6683e78b5aecc25410ee7074f71cd98572df1e"))
+      // (189, uint256("0x0000091ac40b197383d32942f0f201cc78408867e0340505036860587513d263"))  
     ;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -114,7 +114,7 @@ public:
         nTargetSpacing = 1 * 60;  // YEN: 1 minute
         nMaturity = 60;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 31000000 * COIN;
+        nMaxMoneyOut = 8000000 * COIN;
 
 
         /** Height or Time Based Activations **/

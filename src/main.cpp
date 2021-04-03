@@ -1637,17 +1637,18 @@ int64_t GetMasternodePayment(int nHeight, unsigned mnlevel, int64_t blockValue)
     switch(mnlevel)
     {
         case 1:
-            ret = blockValue * 7 / 100; //7% of the block reward
+            ret = blockValue * 7 / 100; //7% of the block reward | 80 YEN
 			break;
         case 2:
-            ret = blockValue * 20 / 100; //20% of the block reward
+            ret = blockValue * 20 / 100; //20% of the block reward | 1000 YEN
             break;
         case 3:
-            ret = blockValue * 60 / 100; //30% of the block reward
+            ret = blockValue * 60 / 100; //30% of the block reward | 4000 YEN
             break;
         case 4:
-            ret = blockValue * 95 / 100; //40% of the block reward
+            ret = blockValue * 95 / 100; //40% of the block reward | 25000 YEN
             break;
+            // AND POS IS GETTING 3% of the block reward
     }
     return ret;
 }
