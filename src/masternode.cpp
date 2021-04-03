@@ -353,10 +353,10 @@ bool CMasternode::IsValidNetAddr()
 unsigned CMasternode::Level(CAmount vin_val, int blockHeight)
 {
     switch(vin_val) {        
-        case 800 * COIN: return 1;
-        case 4000 * COIN: return 2;
-        case 20000 * COIN: return 3;
-        case 100000 * COIN: return 4;
+        case 80 * COIN: return 1;
+        case 1000 * COIN: return 2;
+        case 4000 * COIN: return 3;
+        case 25000 * COIN: return 4;
     }
     return 0;
 }
@@ -378,7 +378,7 @@ bool CMasternode::IsDepositCoins(CAmount vin_val)
 
     //Level(vin_val, chainActive.Height());
 	//LogPrintf("IsDepositCoins vin_val=%s\n",vin_val);
-    if ( vin_val == 800 * COIN || vin_val == 4000 * COIN || vin_val == 20000 * COIN || vin_val == 100000 * COIN ) {
+    if ( vin_val == 80 * COIN || vin_val == 1000 * COIN || vin_val == 4000 * COIN || vin_val == 25000 * COIN ) {
 		return true;
 	} else {
 	    return false;

@@ -424,9 +424,9 @@ int CMasternodeMan::stable_size (unsigned mnlevel)
             continue;
 
         //TO FIX @SMARTINSIDER - SPORK №4
-        nMasternode_Age = GetAdjustedTime() - mn.sigTime;
-        if (nMasternode_Age < nMasternode_Min_Age) 		
-            continue; // Skip masternodes younger than (default) 8000 sec (MUST be > MASTERNODE_REMOVAL_SECONDS)
+        //nMasternode_Age = GetAdjustedTime() - mn.sigTime;
+        //if (nMasternode_Age < nMasternode_Min_Age) 		
+        //    continue; // Skip masternodes younger than (default) 8000 sec (MUST be > MASTERNODE_REMOVAL_SECONDS)
         
         
         mn.Check ();

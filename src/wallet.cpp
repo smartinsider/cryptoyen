@@ -1052,10 +1052,10 @@ CAmount CWalletTx::GetUnlockedCredit() const
         const CTxOut& txout = vout[i];
 
         if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-        if (fMasterNode && vout[i].nValue == 100000 * COIN) continue; // do not count MN-like outputs
-        if (fMasterNode && vout[i].nValue == 20000 * COIN) continue; // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == 25000 * COIN) continue; // do not count MN-like outputs
         if (fMasterNode && vout[i].nValue == 4000 * COIN) continue; // do not count MN-like outputs
-        if (fMasterNode && vout[i].nValue == 800 * COIN) continue; // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == 1000 * COIN) continue; // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == 80 * COIN) continue; // do not count MN-like outputs
 
         nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         if (!MoneyRange(nCredit))
@@ -1089,16 +1089,16 @@ CAmount CWalletTx::GetLockedCredit() const
         }
 
         // Add masternode collaterals which are handled likc locked coins
-        else if (fMasterNode && vout[i].nValue == 100000 * COIN) {
-            nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
-        }
-        else if (fMasterNode && vout[i].nValue == 20000 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 25000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         }
         else if (fMasterNode && vout[i].nValue == 4000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         }
-        else if (fMasterNode && vout[i].nValue == 800 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 1000 * COIN) {
+            nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
+        }
+        else if (fMasterNode && vout[i].nValue == 80 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         }
 
@@ -1174,16 +1174,16 @@ CAmount CWalletTx::GetLockedWatchOnlyCredit() const
         }
 
         // Add masternode collaterals which are handled likc locked coins
-        else if (fMasterNode && vout[i].nValue == 100000 * COIN) {
-            nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
-        }
-        else if (fMasterNode && vout[i].nValue == 20000 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 25000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
         }
         else if (fMasterNode && vout[i].nValue == 4000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
         }
-        else if (fMasterNode && vout[i].nValue == 800 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 1000 * COIN) {
+            nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
+        }
+        else if (fMasterNode && vout[i].nValue == 80 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
         }
 
@@ -1613,10 +1613,10 @@ void CWallet::AvailableCoins(
 				
 				
                 if (nCoinType == ONLY_NOT10000IFMN) {
-					found = !(fMasterNode && (pcoin->vout[i].nValue == 800 * COIN || pcoin->vout[i].nValue == 4000 * COIN || pcoin->vout[i].nValue == 20000 * COIN || pcoin->vout[i].nValue == 100000 * COIN));
+					found = !(fMasterNode && (pcoin->vout[i].nValue == 80 * COIN || pcoin->vout[i].nValue == 1000 * COIN || pcoin->vout[i].nValue == 4000 * COIN || pcoin->vout[i].nValue == 25000 * COIN));
 
                 } else if (nCoinType == ONLY_10000) {
-					if (pcoin->vout[i].nValue == 800 * COIN || pcoin->vout[i].nValue == 4000 * COIN || pcoin->vout[i].nValue == 20000 * COIN || pcoin->vout[i].nValue == 100000 * COIN){
+					if (pcoin->vout[i].nValue == 80 * COIN || pcoin->vout[i].nValue == 1000 * COIN || pcoin->vout[i].nValue == 4000 * COIN || pcoin->vout[i].nValue == 25000 * COIN){
 			        	found = true;
 					}
 					
@@ -1982,10 +1982,10 @@ bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<
         if (out.tx->vout[out.i].nValue < CENT) continue;
         //do not allow collaterals to be selected
         if (IsCollateralAmount(out.tx->vout[out.i].nValue)) continue;
-        if (fMasterNode && out.tx->vout[out.i].nValue == 100000 * COIN) continue; //masternode input
-        if (fMasterNode && out.tx->vout[out.i].nValue == 20000 * COIN) continue; //masternode input
+        if (fMasterNode && out.tx->vout[out.i].nValue == 25000 * COIN) continue; //masternode input
         if (fMasterNode && out.tx->vout[out.i].nValue == 4000 * COIN) continue; //masternode input
-        if (fMasterNode && out.tx->vout[out.i].nValue == 800 * COIN) continue; //masternode input
+        if (fMasterNode && out.tx->vout[out.i].nValue == 1000 * COIN) continue; //masternode input
+        if (fMasterNode && out.tx->vout[out.i].nValue == 80 * COIN) continue; //masternode input
 
         if (nValueRet + out.tx->vout[out.i].nValue <= nValueMax) {
             CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
