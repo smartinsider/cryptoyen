@@ -1,15 +1,16 @@
 # CryptoYen (4 tiers masternode coin)
-
-
-# Coin Settings
-___
-
 ## BASIC
+
 **MAX SUPPLY**: 8 millions
+
 **BLOCK REWORD**: 0.2 coin
+
 **BLOCK TIME**: 1-3 block per minute
+
 **P2P port**: 17171
+
 **RPC port**: 17172
+
 
 ## Mining Settings
 #### POS (3% from block reword):
@@ -31,7 +32,7 @@ ___
   - 25000 coins for start masternode 
   - 40% from block reword
 
-___ 
+___
 
 More info you can read here: https://cryptoyen_modern.icu
 
