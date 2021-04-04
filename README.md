@@ -1,15 +1,10 @@
 # CryptoYen (4 tiers masternode coin)
 ## BASIC
-
-**MAX SUPPLY**: 8 millions
-
-**BLOCK REWORD**: 0.2 coin
-
-**BLOCK TIME**: 1-3 block per minute
-
-**P2P port**: 17171
-
-**RPC port**: 17172
+  - **MAX SUPPLY**: 8 millions
+  - **BLOCK REWORD**: 0.2 coin
+  - **BLOCK TIME**: 1-3 block per minute
+  - **P2P port**: 17171
+  - **RPC port**: 17172
 
 
 ## Mining Settings
