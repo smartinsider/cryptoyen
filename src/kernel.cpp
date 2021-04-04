@@ -328,8 +328,8 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
     CDataStream ssUniqueID = stakeInput->GetUniqueness();
     CAmount nValueIn = stakeInput->GetValue();
  
-    if (nValueIn < 5 * COIN ) // Min stake value coins
-        return error("Stake() : min stake value need to be more then 5 coins");
+    if (nValueIn < 0.01 * COIN ) // Min stake value coins
+        return error("Stake() : min stake value need to be more then 0.01 coins");
 
     //LogPrintf("nValueIn %s\n",nValueIn);
 

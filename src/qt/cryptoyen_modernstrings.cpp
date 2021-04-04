@@ -202,7 +202,7 @@ QT_TRANSLATE_NOOP("cryptoyen_modern-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("cryptoyen_modern-core", ""
 "Unable to locate enough Obfuscation non-denominated funds for this "
-"transaction that are not equal 4000 or 20000 and not even 100000 YEN."),
+"transaction that are not equal 80 | 1000 | 4000 | 25000 YEN."),
 QT_TRANSLATE_NOOP("cryptoyen_modern-core", ""
 "Unable to locate enough funds for this transaction that are not equal 10000 "
 "YEN."),

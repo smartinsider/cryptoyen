@@ -545,7 +545,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 	//POS time
 	unsigned int nLastPosTime = 0;
     bool SPORK_21 = true; // TOFIXED
-	int SPORK_21_VAL = 1; // 5 is optimal 
+	int SPORK_21_VAL = 10; // 10 is optimal 
 	
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
